@@ -19,19 +19,24 @@ public class QuicksortInt
 				//System.out.println("store " + storeIndex);
 				if( arr[j] < arr[pivotIndex] )
 				{
+					//System.out.println("j " + j);
 					int temp        = arr[j];
 					arr[j]          = arr[storeIndex];
 					arr[storeIndex] = temp;
 					storeIndex++;
+					//for(int i = 0; i<arr.length; i++)
+					//	System.out.print(arr[i] + " ");
 				}
 			}
 			int temp = arr[pivotIndex];
 			arr[pivotIndex] = arr[storeIndex];
 			arr[storeIndex] = temp;
 			pivotIndex = storeIndex;
-			partition(arr, low+1, pivotIndex);
+			partition(arr, low, pivotIndex-1);
 			partition(arr, pivotIndex+1, high);
 		}
+		//for(int i = 0; i<arr.length; i++)
+		//	System.out.print(arr[i] + " ");
 
 	}
 	void quicksort(int arr[])	
@@ -41,7 +46,7 @@ public class QuicksortInt
 
 	public static void main(String args[])
 	{
-		int arr[] = {-1,2,3,5,4,16,8,-10};
+		int arr[] = {-1,-10,2,3,5,4,16,8,0};
 		QuicksortInt obj = new QuicksortInt();
 		obj.quicksort(arr);
 
