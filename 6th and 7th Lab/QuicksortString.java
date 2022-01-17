@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class QuicksortInt
+public class QuicksortString
 {
 	
-	void partition(int arr[], int low, int high)
+	void partition(String arr[], int low, int high)
 	{
 		if(low < high)
 		{
@@ -14,10 +14,10 @@ public class QuicksortInt
 			{
 				//System.out.println("pivot " + pivotIndex);
 				//System.out.println("store " + storeIndex);
-				if( arr[j] < arr[pivotIndex] )
+				if( arr[j].compareTo(arr[pivotIndex]) < 0  )
 				{
 					//System.out.println("j " + j);
-					int temp        = arr[j];
+					String temp        = arr[j];
 					arr[j]          = arr[storeIndex];
 					arr[storeIndex] = temp;
 					storeIndex++;
@@ -25,7 +25,7 @@ public class QuicksortInt
 					//	System.out.print(arr[i] + " ");
 				}
 			}
-			int temp = arr[pivotIndex];
+			String temp = arr[pivotIndex];
 			arr[pivotIndex] = arr[storeIndex];
 			arr[storeIndex] = temp;
 			pivotIndex = storeIndex;
@@ -36,7 +36,7 @@ public class QuicksortInt
 		//	System.out.print(arr[i] + " ");
 
 	}
-	void quicksort(int arr[])	
+	void quicksort(String arr[])	
 	{
 		partition(arr, 0, arr.length-1);
 	}
@@ -49,13 +49,17 @@ public class QuicksortInt
 		System.out.print("Enter Number of inputs: ");
 		count = sc.nextInt();
 		
-		int arr[] = new int[count];
-		System.out.println("Enter Numbers");
+		String arr[] = new String[count];
+		System.out.println("Enter Names");
+		// Flush Stdin
+		if(sc.hasNextLine()){
+			sc.nextLine();
+		}
 		for(int i=0; i<count; i++)
 		{
-			arr[i] = sc.nextInt();
+			arr[i] = sc.nextLine();
 		}
-		QuicksortInt obj = new QuicksortInt();
+		QuicksortString obj = new QuicksortString();
 		obj.quicksort(arr);
 		
 		System.out.println("Sorted Array");
