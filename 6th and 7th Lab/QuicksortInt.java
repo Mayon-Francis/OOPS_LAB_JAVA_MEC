@@ -46,10 +46,22 @@ public class QuicksortInt
 
 	public static void main(String args[])
 	{
-		int arr[] = {-1,-10,2,3,5,4,16,8,0};
+		Scanner sc = new Scanner(System.in);
+
+		int count;
+		System.out.print("Enter Number of inputs: ");
+		count = sc.nextInt();
+		
+		int arr[] = new int[count];
+		System.out.println("Enter Numbers");
+		for(int i=0; i<count; i++)
+		{
+			arr[i] = sc.nextInt();
+		}
 		QuicksortInt obj = new QuicksortInt();
 		obj.quicksort(arr);
-
+		
+		System.out.println("Sorted Array");
 		for(int i = 0; i<arr.length; i++)
 			System.out.print(arr[i] + " ");
 	}
