@@ -55,6 +55,7 @@ public class QuicksortInt
 		{
 			arr[i] = sc.nextInt();
 		}
+		sc.close();
 		QuicksortInt obj = new QuicksortInt();
 		obj.quicksort(arr);
 		
