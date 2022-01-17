@@ -172,6 +172,7 @@ public class DoublyMain
 			}
 
 		}while(choice < 4);
+		sc.close();
 	}
 
 }

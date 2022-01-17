@@ -59,6 +59,7 @@ public class QuicksortString
 		{
 			arr[i] = sc.nextLine();
 		}
+		sc.close();
 		QuicksortString obj = new QuicksortString();
 		obj.quicksort(arr);
 		
